@@ -4,8 +4,12 @@ self.addEventListener('install', function(event) {
         return cache.addAll([
           '/',
           '/index.html',
-          '/styles.css',
-          '/script.js',
+          '/styles_etusivu.css',
+          '/ressulaskuri.jpg',
+          '/kilpailu.html',
+          '/kilpailijanluonti.html',
+          '/laskuri.html',
+          '/tulokset.html',
           '/icon192.png',
           '/icon512.png'
         ]);
