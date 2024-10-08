@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luo uusi kisa</title>
+    <link rel="stylesheet" href="styles_etusivu.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Luo uusi kisa</h1>
+
+        <form id="kisan-lomake">
+            <label for="yhdistys">Järjestävä yhdistys:</label>
+            <input type="text" id="yhdistys" name="yhdistys" required><br><br>
+
+            <label for="paikka">Kilpailupaikka:</label>
+            <input type="text" id="paikka" name="paikka" required><br><br>
+
+            <label for="ajankohta">Kilpailun ajankohta:</label>
+            <input type="date" id="ajankohta" name="ajankohta" required><br><br>
+
+            <label for="laukausmaara">Laukausmäärä:</label>
+            <input type="number" id="laukausmaara" name="laukausmaara" required><br><br>
+
+            <button type="submit" class="btn">Luo kilpailu</button>
+        </form>
+
+        <h2>Kilpailun tiedot</h2>
+        <div id="kilpailun-tiedot">
+            <p>Ei luotuja kilpailuja</p>
+        </div>
+
+        <!-- Etusivu-nappi -->
+        <a href="index.html" class="btn-small-red">Etusivu</a>
+    </div>
+
+    <script src="kisanluonti.js"></script>
+</body>
+</html>

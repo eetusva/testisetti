@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etusivu</title>
+    <link rel="stylesheet" href="styles_etusivu.css"> 
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Tervetuloa RessuKisaLaskuriin!</h1>
+
+        <div id="image-container">
+            <img src="ressulaskuri.jpg" alt="Esimerkkikuva" id="target-image">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="kilpailu.html" class="button">Luo uusi kilpailu</a></li>
+                <li><a href="kilpailijanluonti.html" class="button">Kilpailijan Luonti</a></li>
+                <li><a href="laskuri.html" class="button">Laskuri</a></li>
+                <li><a href="tulokset.html" class="button">Tulokset</a></li>
+            </ul>
+        </nav>
+
+        <button class="btn-small-red" onclick="tyhjennaTietokanta()">Tyhjennä tietokanta</button>
+    </div>
+
+    <script>
+        function tyhjennaTietokanta() {
+            if (confirm('Haluatko varmasti tyhjentää tietokannan?')) {
+                // koodit tyhjennykselle
+                console.log('Tietokanta tyhjennetty!');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('ServiceWorker rekisteröinti onnistui: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker rekisteröinti epäonnistui: ', err);
+        });
+      });
+    }
+  </script>
+  
