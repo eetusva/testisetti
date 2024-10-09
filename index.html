@@ -43,9 +43,9 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('ServiceWorker rekisteröinti onnistui: ', registration.scope);
+          console.log('ServiceWorker rekisteröity: ', registration.scope);
         }, function(err) {
-          console.log('ServiceWorker rekisteröinti epäonnistui: ', err);
+          console.log('ServiceWorkerin rekisteröinti epäonnistui: ', err);
         });
       });
     }
