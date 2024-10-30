@@ -1,18 +1,18 @@
 {
     "name": "RessuKisaLaskuri",
-    "short_name": "RessuLaskuri",
-    "start_url": "/index.html",
+    "short_name": "RK-Laskuri",
+    "start_url": "https://eetusva.github.io/664-OHJ-Ohjelmointi-tutkinnonosan/index.html",
     "display": "standalone",
-    "background_color": "#73d376",
+    "background_color": "#ffffff",
     "theme_color": "#007bff",
     "icons": [
       {
-        "src": "icon192.png",
+        "src": "icon-192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "icon512.png",
+        "src": "icon-512.png",
         "sizes": "512x512",
         "type": "image/png"
       }

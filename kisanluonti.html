@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luo uusi kisa</title>
+    <link rel="stylesheet" href="styles_etusivu.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Luo uusi kisa</h1>
+
+        <form id="kisan-lomake">
+            <label for="yhdistys">Järjestävä yhdistys:</label>
+            <input type="text" id="yhdistys" name="yhdistys" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"><br><br>
+
+            <label for="paikka">Kilpailupaikka:</label>
+            <input type="text" id="paikka" name="paikka" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"><br><br>
+
+            <label for="ajankohta">Kilpailun ajankohta:</label>
+            <input type="date" id="ajankohta" name="ajankohta" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"><br><br>
+
+            <label for="laukausmaara">Laukausmäärä:</label>
+            <input type="number" id="laukausmaara" name="laukausmaara" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"><br><br>
+
+            <button type="submit" class="btn">Luo kilpailu</button>
+        </form>
+
+        <h2>Kilpailun tiedot</h2>
+        <div id="kilpailun-tiedot">
+            <p>Ei luotuja kilpailuja</p>
+        </div>
+
+        <a href="kilpailijanluonti.html" class="btn-small-red" style="display: inline-block; width: 150px; margin-top: 20px; text-align: center; background-color: #4CAF50; color: white;">Seuraava</a>
+
+        <a href="index.html" class="btn-small-red" style="display: inline-block; width: 150px; margin-top: 20px; text-align: center;">Etusivu</a>
+    </div>
+
+    <script src="kisanluonti.js"></script>
+</body>
+</html>

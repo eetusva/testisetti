@@ -1,54 +1,34 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
+    <link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etusivu</title>
-    <link rel="stylesheet" href="styles_etusivu.css"> 
+    <link rel="shortcut icon" href="tag.png" type="image/x-icon">
+    <title>Ressulaskuri</title>
+    <link rel="stylesheet" href="styles_etusivu.css">
 </head>
 <body>
-
-    <div class="login-container">
-        <h1>Ressulaskuri</h1>
-
-        <div id="image-container">
-            <img src="ressulaskuri.jpg" alt="Esimerkkikuva" id="target-image">
+     <div id="gdprModal" class="modal">
+        <div class="modal-content">
+            
+            <div id="modalInfo"></div>
         </div>
+    </div>
+    
+    <div id="app">
+        <header id="header"></header>
 
-        <nav>
-            <ul>
-                <li><a href="kilpailu.html" class="button">Luo uusi kilpailu</a></li>
-                <li><a href="kilpailijanluonti.html" class="button">Kilpailijan Luonti</a></li>
-                <li><a href="laskuri.html" class="button">Laskuri</a></li>
-                <li><a href="tulokset.html" class="button">Tulokset</a></li>
-            </ul>
-        </nav>
+        <section id="image-container">
+            <img src="ressulaskuri.jpg" id="target-image">
+        </section>
 
-        <button class="btn-small-red" onclick="tyhjennaTietokanta()">Tyhjennä tietokanta</button>
+        <nav id="navigation"></nav>
+
+        <section id="main-content"></section>
     </div>
 
-    <script>
-        function tyhjennaTietokanta() {
-            if (confirm('Haluatko varmasti tyhjentää tietokannan?')) {
-                // koodit tyhjennykselle
-                console.log('Tietokanta tyhjennetty!');
-            }
-        }
+    <script type="module" src="etusivu.js">
     </script>
-
 </body>
 </html>
-
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('ServiceWorker rekisteröity: ', registration.scope);
-        }, function(err) {
-          console.log('ServiceWorkerin rekisteröinti epäonnistui: ', err);
-        });
-      });
-    }
-  </script>
-  
-  

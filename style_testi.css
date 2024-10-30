@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Classica', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:linear-gradient(#73d376,#ccc);
+}
+
+.login-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#login-form,#registration_form{
+    
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.radiot{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    color: #070505;
+    background-color: #d9e4f0;
+    border: 3px solid #0b9411;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.score-btn{
+
+    font-size: 2em;
+    margin-left: 10px;
+    width: 70px;
+    height: 60px;
+    font-weight: bold;
+  
+}
+select{
+    font-size: 1em;
+}
+.osumat-animate-grow{
+    display: inline-block;
+    margin-left: 45%;
+    transition: transform 0.5s ease-out;
+    color: #0b9411;
+    
+}
+
+.osumat-animate-grow.active{
+    transform: scale(3);
+}
+
+#remove{
+    
+    width: 70px;
+    height: 60px;
+    margin-left: 10px;
+    font-size: 1.4em;
+      
+}
+
+.poisto-animate-grow{
+    display: inline-block;
+    margin-left: 45%;
+    transition: transform 0.5s ease-out;
+    color: #9c1010;
+}
+
+.poisto-animate-grow.active{
+    transform: scale(3);
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    padding: 10px; 
+    font-size: 18px;
+    color: #070505; 
+    background-color: #d9e4f0; 
+    border: 3px solid #0b9411; 
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer; 
+    margin-top: 10px;
+    margin-left: 5px;
+    display: block;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; 
+}
+
+#image-container {
+    margin: 20px 0;
+    display: flex;          
+    justify-content: center; 
+}
+
+#target-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.kontti {
+    width: 99vw;
+    height: 97vh;
+    margin: 0 auto;
+}
+
+table {
+    padding: 1vh 1vw;
+    width: 98vw;
+    margin-top: 5%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    background-color: lightblue;
+}
+
+tbody tr {
+    height: 6vh;
+}
+
+tbody>tr:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+thead tr {
+    font-size: x-large;
+    background-color: darkslateblue;
+    color: antiquewhite;
+}
+
+#info {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+}
+
+#btnKontti {
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 1vh;
+    justify-content: space-evenly;
+}
+
+#btnKontti button {
+    width: 20vw;
+}
+
+.modaali {
+    display: none;
+    width: 95vw;
+    height: 30vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 1.4em;
+    font-weight: 800;
+    transform: translate(-50%, -50%);
+    border: 1px solid #333;
+    background-color: white;
+    z-index: 1000;
+    padding: 5px;
+}
+
+.modaaliSisalto {
+    float: left;
+}
+
+#korttiSisalto {
+    margin-top: 5%;
+}
+
+.sulje {
+    font-weight: 900;
+    color: red;
+    float: right;
+    cursor: pointer;
+}

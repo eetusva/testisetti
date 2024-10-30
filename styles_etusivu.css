@@ -1,34 +1,29 @@
-/* Yleiset tyylit */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Classica', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(#73d376, #ccc);
+    font-family: Arial, sans-serif;
+    background-color: #adebad;
+    color: #333;
+    padding: 20px;
 }
 
-.login-container {
-    width: 400px;
-    margin: 0 auto;
+#app {
+    background-color: white;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    max-width: 550px; 
+    margin: 0 auto;
+    text-align: center; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
 }
 
 #image-container {
     margin: 20px 0;
-    display: flex;
-    justify-content: center;
+    display: flex;          
+    justify-content: center; 
 }
 
 #target-image {
@@ -39,71 +34,96 @@ body {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; 
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
     margin-bottom: 10px;
 }
 
-nav ul li a.button {
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    display: block;
-    background-color: #007bff;
-    border-radius: 5px;
+nav ul li a {
+    padding: 10px; 
+    font-size: 18px;
+    color: #070505; 
+    background-color: #d9e4f0; 
+    border: 3px solid #0b9411; 
+    border-radius: 25px;
     text-align: center;
-    font-weight: bold;
+    cursor: pointer; 
+    margin-top: 10px;
+    margin-left: 5px;
+    display: block;
+    text-decoration: none;
 }
 
-nav ul li a.button:hover {
-    background-color: #0056b3;
+nav ul li a:hover {
+    background-color: #0056b3; 
 }
 
 button {
-    width: 100%; /* Leveys täyttää kontin */
     padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    font-size: 18px;
+    color: #070505;
+    background-color: #d9e4f0;
+    border: 3px solid #0b9411;
+    border-radius: 25px;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 5px;
 }
-
-button:hover {
-    background-color: #0056b3;
-}
-
 .btn-small-red {
-    width: 100%; /* Tyhjennysnappi täyttää kontin leveyden */
-    padding: 10px;
+    width: 120px; 
+    padding: 8px 15px;
     background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 20px auto; 
+    display: block; 
+    text-decoration: none; 
 }
 
 .btn-small-red:hover {
-    background-color: #c82333;
+    background-color: #c82333; 
+    text-decoration: none; 
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-      font-size: 14px;
-    }
-  
-    .login-container {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    button {
-      width: 100%;
-    }
-  }
+/*------modaali-------*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 3px solid #0b9411;
+    border-radius: 10px;
+    width: 60%; 
+    text-align: center;
+   
+}
+
+
+.close {
+    color: #691313;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    width: 100%; 
+    box-sizing: border-box; 
+}
