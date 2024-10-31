@@ -30,20 +30,6 @@ function teeNavigointi() {
     return nav;
 }
 
-
-
-/*
-function lataaSisalto(ladattavaSivu) {  // lisäys
-    const script = document.createElement('script');  
-    script.src = ladattavaSivu;
-    script.type = 'module'; //vaiko 'module'?
-    
-    const sisaltoElementti = document.getElementById('app');
-    sisaltoElementti.innerHTML = '';
-    
-    sisaltoElementti.appendChild(script);
-  }
-*/
 function teePaasivu() {
     let section = document.createElement('section');
 
@@ -60,13 +46,52 @@ function teePaasivu() {
     };
     gdpr_nappi.onclick = () => {
         infoGDPR();
-
     }
     section.appendChild(nappi);
     section.appendChild(gdpr_nappi);
+
+    // Luo ja lisää "Lisää aloitusnäytölle" -painike
+    let addBtn = document.createElement('button');
+    addBtn.id = 'addToHomeScreen';
+    addBtn.textContent = 'Lisää aloitusnäytölle';
+    addBtn.style.display = 'none'; // Piilotetaan, kunnes kehotus aktivoituu
+    section.appendChild(addBtn);
+
+    // EventListener painikkeelle
+    addBtn.addEventListener('click', () => {
+        if (deferredPrompt) {
+            // Näytä asennuskehotus
+            deferredPrompt.prompt();
+            // Käsittele käyttäjän vastaus
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('Käyttäjä hyväksyi aloitusnäytölle lisäyksen');
+                } else {
+                    console.log('Käyttäjä hylkäsi aloitusnäytölle lisäyksen');
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+
     return section;
 }
 
+// Globaalit muuttujat
+let deferredPrompt;
+
+// Kuuntele beforeinstallprompt-tapahtumaa
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Estä selainta näyttämästä oletuskehotusta
+    e.preventDefault();
+    // Tallenna tapahtuma myöhempää käyttöä varten
+    deferredPrompt = e;
+    // Näytä mukautettu "Lisää aloitusnäytölle" -painike
+    const addBtn = document.getElementById('addToHomeScreen');
+    addBtn.style.display = 'block';
+});
+
+// Kutsutaan funktiot elementtien lisäämiseksi HTML:ään
 document.getElementById('header').appendChild(teeOtsikko());
 document.getElementById('navigation').appendChild(teeNavigointi());
 document.getElementById('main-content').appendChild(teePaasivu());
