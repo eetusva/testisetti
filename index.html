@@ -27,40 +27,7 @@
         <section id="main-content"></section>
     </div>
 
-    <!-- Mukautettu "Lisää aloitusnäytölle" -painike -->
-    <button id="addToHomeScreen" style="display: none;">Lisää aloitusnäytölle</button>
-
+    <!-- Lataa etusivu.js, joka sisältää kaikki toiminnallisuudet -->
     <script type="module" src="etusivu.js"></script>
-
-    <!-- Mukautettu JavaScript-koodi asennuskehotukselle -->
-    <script>
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Estä selainta näyttämästä oletuskehotusta
-            e.preventDefault();
-            // Tallenna tapahtuma myöhempää käyttöä varten
-            deferredPrompt = e;
-            // Näytä mukautettu "Lisää aloitusnäytölle" -painike
-            const addBtn = document.getElementById('addToHomeScreen');
-            addBtn.style.display = 'block';
-
-            addBtn.addEventListener('click', () => {
-                // Piilota painike
-                addBtn.style.display = 'none';
-                // Näytä asennuskehotus
-                deferredPrompt.prompt();
-                // Käsittele käyttäjän vastaus kehotukseen
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('Käyttäjä hyväksyi aloitusnäytölle lisäyksen');
-                    } else {
-                        console.log('Käyttäjä hylkäsi aloitusnäytölle lisäyksen');
-                    }
-                    deferredPrompt = null;
-                });
-            });
-        });
-    </script>
 </body>
 </html>
